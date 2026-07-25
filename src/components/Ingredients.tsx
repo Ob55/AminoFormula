@@ -12,22 +12,19 @@ const freeFrom = [
 
 export default function Ingredients() {
   return (
-    <section
-      id="ingredients"
-      className="py-24 md:py-28 scroll-mt-24 bg-gradient-to-b from-white to-sky-50/70"
-    >
+    <section id="ingredients" className="py-24 md:py-28 scroll-mt-24">
       <div className="container-wide">
         <Reveal className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-brand font-semibold tracking-[0.2em] uppercase text-xs">
-            The Science
+          <p className="text-brand font-bold tracking-[0.2em] uppercase text-sm">
+            Key Ingredients
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-navy">
-            The perfect blend of{" "}
-            <span className="italic text-gradient">8 essential amino acids</span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] text-navy">
+            The 8 essential{" "}
+            <span className="italic text-gradient">amino acids</span>
           </h2>
-          <p className="mt-5 text-navy/60">
-            Formulated in the exact ratio your body can efficiently use —
-            producing very little waste, unlike ordinary protein supplements.
+          <p className="mt-5 text-lg text-navy/65">
+            A unique blend of the 8 essential amino acids designed to be
+            efficiently used by the body, producing very little waste.
           </p>
         </Reveal>
 
@@ -35,7 +32,7 @@ export default function Ingredients() {
           <Reveal className="rounded-3xl overflow-hidden border border-navy/[0.07] bg-white p-2 shadow-[0_24px_60px_-30px_rgba(13,47,82,0.35)]">
             <img
               src="/assets/image-5.webp"
-              alt="The 8 essential amino acids in Advanced Amino Formula"
+              alt="Essential amino acids in Advanced Amino Formula"
               className="w-full h-auto rounded-[1.25rem]"
             />
           </Reveal>
@@ -52,9 +49,9 @@ export default function Ingredients() {
               </div>
               <div>
                 <h3 className="font-display text-2xl md:text-3xl text-navy">
-                  Clean, pure &amp; body-ready
+                  Supplement Facts
                 </h3>
-                <p className="mt-3 text-navy/60 leading-relaxed">
+                <p className="mt-3 text-lg text-navy/65 leading-relaxed">
                   Just 25 calories and 5,000 mg of the Advanced Amino Formula per
                   serving. No fat, sodium, sugar, yeast, preservatives, or animal
                   products — nothing your body doesn't need.
@@ -69,9 +66,7 @@ export default function Ingredients() {
                   className="flex items-center gap-3 rounded-2xl bg-white border border-navy/[0.07] px-4 py-3 shadow-sm"
                 >
                   <f.icon className="text-brand" size={20} />
-                  <span className="font-semibold text-navy/85 text-sm">
-                    {f.label}
-                  </span>
+                  <span className="font-semibold text-navy/85">{f.label}</span>
                 </div>
               ))}
             </div>

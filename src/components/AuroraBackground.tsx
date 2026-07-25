@@ -1,7 +1,7 @@
 /** Fixed, very soft light aurora so white sections never look flat. */
 export default function AuroraBackground() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#edf1f7]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(34,201,240,0.12),transparent_55%)]" />
       <div className="absolute -top-40 -left-32 h-[36rem] w-[36rem] rounded-full bg-cyanx/10 blur-[120px] animate-aurora" />
       <div

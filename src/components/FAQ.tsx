@@ -1,29 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Reveal from "./Reveal";
-
-const faqs = [
-  {
-    q: "What exactly is Advanced Amino Formula?",
-    a: "It's a dietary supplement providing a precise blend of the 8 essential amino acids your body cannot make on its own. These are the raw building blocks your body uses to build and repair muscle, delivered in a ratio designed for maximum absorption.",
-  },
-  {
-    q: "How do I take it?",
-    a: "Take 5 tablets per serving with water. Each bottle contains a 30-day supply. For best results, use it consistently as part of your daily routine — many people take it before or after activity.",
-  },
-  {
-    q: "How soon will I see results?",
-    a: "Everyone is different, but many customers report feeling stronger and recovering faster within a few weeks of consistent use. For the best results we recommend the 3 or 6 bottle package.",
-  },
-  {
-    q: "Is it safe? Are there side effects?",
-    a: "Advanced Amino Formula is free of dairy, gluten, soy, sugar, and GMOs, and contains no fat, sodium, or preservatives. As with any supplement, if you have a medical condition or take medication, check with your doctor first.",
-  },
-  {
-    q: "What's your guarantee and shipping policy?",
-    a: "Every order ships free and is backed by our 60-day money-back guarantee. If you're not satisfied for any reason, contact us within 60 days for a full refund of your purchase price.",
-  },
-];
+import { faqs } from "../data/content";
 
 function Item({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -48,7 +26,9 @@ function Item({ q, a }: { q: string; a: string }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-6 md:px-8 pb-6 text-navy/60 leading-relaxed">{a}</p>
+          <p className="px-6 md:px-8 pb-6 text-lg text-navy/65 leading-relaxed">
+            {a}
+          </p>
         </div>
       </div>
     </div>
@@ -57,20 +37,23 @@ function Item({ q, a }: { q: string; a: string }) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24 md:py-28 scroll-mt-24 bg-gradient-to-b from-white to-sky-50/60">
+    <section
+      id="faq"
+      className="py-24 md:py-28 scroll-mt-24 bg-gradient-to-b from-transparent to-sky-100/40"
+    >
       <div className="container-wide">
         <Reveal className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-brand font-semibold tracking-[0.2em] uppercase text-xs">
+          <p className="text-brand font-bold tracking-[0.2em] uppercase text-sm">
             Questions
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-navy">
+          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] text-navy">
             Frequently asked{" "}
             <span className="italic text-gradient">questions</span>
           </h2>
         </Reveal>
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((f, i) => (
-            <Reveal key={f.q} delay={i * 0.06}>
+            <Reveal key={f.q} delay={i * 0.05}>
               <Item {...f} />
             </Reveal>
           ))}

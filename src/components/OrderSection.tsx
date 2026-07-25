@@ -63,7 +63,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success/15 text-success shrink-0">
               <Check size={13} strokeWidth={3} />
             </span>
-            <span className="text-navy/55">60-Day Money-Back Guarantee</span>
+            <span className="text-navy/55">90-Day Money-Back Guarantee</span>
           </li>
         </ul>
 
@@ -101,18 +101,18 @@ export default function OrderSection() {
     >
       <div className="container-wide">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-cyanx font-semibold tracking-[0.2em] uppercase text-xs">
+          <p className="text-cyanx font-bold tracking-[0.2em] uppercase text-sm">
             Choose Your Package
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-white">
-            Start rebuilding your{" "}
+          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] text-white">
+            Try Advanced Amino Formula{" "}
             <span className="italic bg-gradient-to-r from-white to-cyanx bg-clip-text text-transparent">
-              strength today
+              risk-free and save
             </span>
           </h2>
-          <p className="mt-5 text-white/70">
+          <p className="mt-5 text-lg text-white/70">
             The more you stock up, the more you save. Every order ships free and
-            is backed by our 60-day money-back guarantee.
+            is backed by our 90-day money-back guarantee.
           </p>
         </Reveal>
 
@@ -139,7 +139,7 @@ export default function OrderSection() {
             <Truck size={16} className="text-success" /> Free Shipping
           </span>
           <span className="flex items-center gap-2">
-            <Check size={16} className="text-success" /> 60-Day Guarantee
+            <Check size={16} className="text-success" /> 90-Day Guarantee
           </span>
         </motion.div>
       </div>

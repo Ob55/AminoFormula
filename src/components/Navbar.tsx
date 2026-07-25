@@ -3,7 +3,7 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import CtaButton from "./CtaButton";
 
 const links = [
-  { label: "Benefits", href: "#benefits" },
+  { label: "About", href: "#about" },
   { label: "Ingredients", href: "#ingredients" },
   { label: "Reviews", href: "#reviews" },
   { label: "Guarantee", href: "#guarantee" },

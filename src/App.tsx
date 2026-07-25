@@ -4,8 +4,9 @@ import Hero from "./components/Hero";
 import ProductShowcase from "./components/ProductShowcase";
 import Benefits from "./components/Benefits";
 import Comparison from "./components/Comparison";
-import Testimonials from "./components/Testimonials";
 import Ingredients from "./components/Ingredients";
+import About from "./components/About";
+import Reviews from "./components/Reviews";
 import OrderSection from "./components/OrderSection";
 import Guarantee from "./components/Guarantee";
 import TrustBadges from "./components/TrustBadges";
@@ -22,8 +23,9 @@ export default function App() {
         <ProductShowcase />
         <Benefits />
         <Comparison />
-        <Testimonials />
         <Ingredients />
+        <About />
+        <Reviews />
         <OrderSection />
         <Guarantee />
         <TrustBadges />

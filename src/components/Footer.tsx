@@ -2,28 +2,28 @@ const linkGroups = [
   {
     title: "Product",
     links: [
-      { label: "Benefits", href: "#benefits" },
+      { label: "About", href: "#about" },
       { label: "Ingredients", href: "#ingredients" },
       { label: "Reviews", href: "#reviews" },
       { label: "Order Now", href: "#order" },
     ],
   },
   {
-    title: "Company",
+    title: "Support",
     links: [
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
       { label: "Guarantee", href: "#guarantee" },
       { label: "FAQ", href: "#faq" },
+      { label: "Contact", href: "#" },
+      { label: "Return Policy", href: "#" },
     ],
   },
   {
     title: "Legal",
     links: [
       { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Shipping & Returns", href: "#" },
-      { label: "Disclaimer", href: "#" },
+      { label: "Terms & Conditions", href: "#" },
+      { label: "Do Not Sell Info", href: "#" },
+      { label: "CA Privacy Rights", href: "#" },
     ],
   },
 ];
@@ -42,6 +42,11 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-white/55 max-w-xs">
               A perfect blend of the 8 essential amino acids to help you rebuild
               muscle, recover faster, and reclaim your strength.
+            </p>
+            <p className="mt-5 text-sm text-white/45 leading-relaxed">
+              5305 Oakbrook Parkway,
+              <br />
+              Norcross, Georgia 30093
             </p>
           </div>
 
@@ -68,18 +73,20 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 text-xs leading-relaxed space-y-3 text-white/45">
           <p>
+            Dr. Frank Shallenberger is compensated by Advanced Bionutritionals
+            for his work in formulating and endorsing this product.
+          </p>
+          <p>
             *These statements have not been evaluated by the Food and Drug
             Administration. This product is not intended to diagnose, treat, cure,
             or prevent any disease. Results may vary from person to person.
           </p>
-          <p>
-            This page is an independent promotional page. Advanced Amino Formula
-            is sold and fulfilled through Digistore24. Prices and offers are
-            subject to change.
+          <p className="text-white/35">
+            Copyright © 2025 Advanced Bionutritionals, LLC. All rights reserved.
           </p>
           <p className="text-white/35">
-            © {new Date().getFullYear()} Advanced Amino Formula. All rights
-            reserved.
+            Secure Order · 2026 © Digistore24 Inc. (United States) and/or its
+            licensors.
           </p>
         </div>
       </div>

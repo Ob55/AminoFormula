@@ -1,6 +1,6 @@
 export default function TrustBadges() {
   return (
-    <section className="py-14 bg-white border-y border-navy/[0.06]">
+    <section className="py-14">
       <div className="container-wide">
         <p className="text-center text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-navy/40 mb-7">
           Safe, secure &amp; trusted checkout

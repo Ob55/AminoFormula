@@ -57,13 +57,13 @@ function BadgeItem({
 
 export default function ProductShowcase() {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-white to-sky-50/70">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-transparent to-sky-100/40">
       <div className="container-wide">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-brand font-semibold tracking-[0.2em] uppercase text-xs">
-            One Formula, Total Support
+          <p className="text-brand font-bold tracking-[0.2em] uppercase text-sm">
+            Advanced Amino Formula Benefits
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-navy">
+          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] text-navy">
             Pure, clean &amp; made for your{" "}
             <span className="italic text-gradient">whole body</span>
           </h2>
@@ -106,7 +106,7 @@ export default function ProductShowcase() {
                 <span className="mt-0.5 grid place-items-center h-6 w-6 shrink-0 rounded-full bg-cta/15 text-cta">
                   <Check size={14} strokeWidth={3} />
                 </span>
-                <span className="text-navy/80 font-medium">{b}</span>
+                <span className="text-lg text-navy/80 font-medium">{b}</span>
               </li>
             ))}
           </ul>
