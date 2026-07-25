@@ -1,6 +1,7 @@
 import { Star, BadgeCheck, ThumbsUp } from "lucide-react";
 import { reviews, reviewStats } from "../data/content";
 import Reveal from "./Reveal";
+import ImageSlider from "./ImageSlider";
 
 export default function Reviews() {
   return (
@@ -18,11 +19,18 @@ export default function Reviews() {
 
         {/* Featured testimonial image + stats */}
         <div className="grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-14">
-          <Reveal className="rounded-3xl overflow-hidden border border-navy/[0.07] shadow-[0_24px_60px_-30px_rgba(13,47,82,0.4)]">
-            <img
-              src="/assets/2.jpg"
-              alt="“I have not stopped taking them and feel 20 years younger” — Judy P., Advanced Amino Formula customer"
-              className="w-full h-auto"
+          <Reveal>
+            <ImageSlider
+              images={[
+                {
+                  src: "/assets/2.jpg",
+                  alt: "“I have not stopped taking them and feel 20 years younger” — Judy P., Advanced Amino Formula customer",
+                },
+                {
+                  src: "/assets/5.jpg",
+                  alt: "99% of the amino acids in Advanced Amino Formula are used by your body — only 1% wasted",
+                },
+              ]}
             />
           </Reveal>
 
