@@ -16,28 +16,38 @@ export default function Reviews() {
           </h2>
         </Reveal>
 
-        {/* Stats bar */}
-        <Reveal className="max-w-3xl mx-auto mb-12 grid grid-cols-3 divide-x divide-navy/10 rounded-3xl bg-white border border-navy/[0.07] shadow-[0_18px_50px_-30px_rgba(13,47,82,0.4)] py-6">
-          <div className="text-center px-2">
-            <p className="font-display text-4xl text-navy">
-              {reviewStats.count.toLocaleString()}
-            </p>
-            <p className="text-sm text-navy/55 font-medium">Reviews</p>
-          </div>
-          <div className="text-center px-2">
-            <p className="font-display text-4xl text-navy flex items-center justify-center gap-1">
-              {reviewStats.average}
-              <Star size={20} className="text-cta" fill="currentColor" strokeWidth={0} />
-            </p>
-            <p className="text-sm text-navy/55 font-medium">Average Rating</p>
-          </div>
-          <div className="text-center px-2">
-            <p className="font-display text-4xl text-navy">
-              {reviewStats.recommend}%
-            </p>
-            <p className="text-sm text-navy/55 font-medium">Recommend</p>
-          </div>
-        </Reveal>
+        {/* Featured testimonial image + stats */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-14">
+          <Reveal className="rounded-3xl overflow-hidden border border-navy/[0.07] shadow-[0_24px_60px_-30px_rgba(13,47,82,0.4)]">
+            <img
+              src="/assets/2.jpg"
+              alt="“I have not stopped taking them and feel 20 years younger” — Judy P., Advanced Amino Formula customer"
+              className="w-full h-auto"
+            />
+          </Reveal>
+
+          <Reveal delay={0.1} className="grid grid-cols-3 divide-x divide-navy/10 rounded-3xl bg-white border border-navy/[0.07] shadow-[0_18px_50px_-30px_rgba(13,47,82,0.4)] py-8">
+            <div className="text-center px-2">
+              <p className="font-display text-4xl md:text-5xl text-navy">
+                {reviewStats.count.toLocaleString()}
+              </p>
+              <p className="text-sm text-navy/55 font-medium">Reviews</p>
+            </div>
+            <div className="text-center px-2">
+              <p className="font-display text-4xl md:text-5xl text-navy flex items-center justify-center gap-1">
+                {reviewStats.average}
+                <Star size={22} className="text-cta" fill="currentColor" strokeWidth={0} />
+              </p>
+              <p className="text-sm text-navy/55 font-medium">Avg Rating</p>
+            </div>
+            <div className="text-center px-2">
+              <p className="font-display text-4xl md:text-5xl text-navy">
+                {reviewStats.recommend}%
+              </p>
+              <p className="text-sm text-navy/55 font-medium">Recommend</p>
+            </div>
+          </Reveal>
+        </div>
 
         {/* Review cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

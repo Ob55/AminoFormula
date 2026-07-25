@@ -1,20 +1,11 @@
-import { motion } from "framer-motion";
 import { Milk, Dumbbell } from "lucide-react";
 import Reveal from "./Reveal";
-
-/** Illustrative net protein utilization — how much actually becomes protein. */
-const utilization = [
-  { label: "Advanced Amino Formula", value: 99, highlight: true },
-  { label: "Whole Eggs", value: 48, highlight: false },
-  { label: "Meat", value: 32, highlight: false },
-  { label: "Whey Protein", value: 17, highlight: false },
-];
 
 export default function Comparison() {
   return (
     <section className="py-24 md:py-28 bg-gradient-to-b from-transparent to-sky-100/40">
       <div className="container-wide">
-        <Reveal className="text-center max-w-3xl mx-auto mb-14">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-display text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] text-navy">
             How Advanced Amino Formula stacks up to{" "}
             <span className="italic text-gradient">other protein sources</span>
@@ -25,50 +16,29 @@ export default function Comparison() {
           </p>
         </Reveal>
 
-        {/* Utilization chart */}
-        <Reveal className="max-w-3xl mx-auto rounded-3xl bg-white border border-navy/[0.07] p-8 md:p-10 shadow-[0_24px_60px_-30px_rgba(13,47,82,0.35)]">
-          <div className="space-y-5">
-            {utilization.map((u, i) => (
-              <div key={u.label}>
-                <div className="flex justify-between mb-1.5">
-                  <span
-                    className={`font-semibold ${
-                      u.highlight ? "text-navy" : "text-navy/60"
-                    }`}
-                  >
-                    {u.label}
-                  </span>
-                  <span
-                    className={`font-bold ${
-                      u.highlight ? "text-brand" : "text-navy/50"
-                    }`}
-                  >
-                    {u.value}%
-                  </span>
-                </div>
-                <div className="h-3.5 rounded-full bg-navy/[0.06] overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${u.value}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: i * 0.15, ease: "easeOut" }}
-                    className={`h-full rounded-full ${
-                      u.highlight
-                        ? "bg-gradient-to-r from-brand to-cyanx"
-                        : "bg-navy/25"
-                    }`}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-navy/40">
-            Illustrative comparison of net protein utilization.
-          </p>
+        {/* Big protein utilization chart */}
+        <Reveal className="max-w-5xl mx-auto rounded-3xl bg-white border border-navy/[0.07] p-3 md:p-4 shadow-[0_24px_60px_-30px_rgba(13,47,82,0.35)]">
+          <img
+            src="/assets/amino-protein-chart.png"
+            alt="Protein Utilization Chart — Advanced Amino Formula 99% vs BCAAs 1%, Whey 18%, Meat 32%, Whole Eggs 48%"
+            className="w-full h-auto rounded-2xl"
+          />
+        </Reveal>
+
+        {/* 99% absorbed infographic */}
+        <Reveal
+          delay={0.1}
+          className="mt-8 max-w-5xl mx-auto rounded-3xl overflow-hidden border border-navy/[0.07] shadow-[0_24px_60px_-30px_rgba(13,47,82,0.35)]"
+        >
+          <img
+            src="/assets/5.jpg"
+            alt="99% of the amino acids in Advanced Amino Formula are used by your body — only 1% wasted"
+            className="w-full h-auto"
+          />
         </Reveal>
 
         {/* Whey + BCAA cards */}
-        <div className="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="mt-8 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {[
             {
               icon: Milk,
