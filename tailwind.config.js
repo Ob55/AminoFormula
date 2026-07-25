@@ -4,50 +4,58 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#0d2f52",
-          dark: "#0a2340",
-          light: "#123c66",
+        ink: {
+          DEFAULT: "#070912", // page background (near-black navy)
+          soft: "#0c1020",
+          card: "#0f1424",
         },
         brand: {
-          DEFAULT: "#1b75bc", // bottle-label blue
+          DEFAULT: "#1b8fd6",
           dark: "#155f9a",
         },
         cyanx: {
-          DEFAULT: "#00a8e1", // DNA-helix cyan accent
+          DEFAULT: "#22c9f0", // electric cyan accent
         },
         cta: {
-          DEFAULT: "#f5831f", // high-converting orange
+          DEFAULT: "#f5831f",
           dark: "#e06d0c",
         },
         success: {
-          DEFAULT: "#2e9e5b",
+          DEFAULT: "#34d17e",
         },
       },
       fontFamily: {
-        sans: [
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
-        ],
+        display: ["'Instrument Serif'", "ui-serif", "Georgia", "serif"],
+        sans: ["'Inter'", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 10px 30px rgba(13, 47, 82, 0.10)",
-        cardHover: "0 18px 45px rgba(13, 47, 82, 0.18)",
+        glow: "0 0 80px -10px rgba(34, 201, 240, 0.45)",
+        card: "0 20px 60px -20px rgba(0, 0, 0, 0.6)",
       },
       keyframes: {
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(16px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        floaty: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-18px)" },
+        },
+        aurora: {
+          "0%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(6%, -4%) scale(1.15)" },
+          "66%": { transform: "translate(-5%, 5%) scale(0.95)" },
+          "100%": { transform: "translate(0, 0) scale(1)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        spinslow: {
+          to: { transform: "rotate(360deg)" },
         },
       },
       animation: {
-        "fade-up": "fade-up 0.6s ease-out both",
+        floaty: "floaty 6s ease-in-out infinite",
+        aurora: "aurora 18s ease-in-out infinite",
+        marquee: "marquee 28s linear infinite",
+        spinslow: "spinslow 40s linear infinite",
       },
     },
   },

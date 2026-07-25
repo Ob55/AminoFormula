@@ -1,4 +1,5 @@
-import { Check, Truck, Lock } from "lucide-react";
+import { Check, Truck } from "lucide-react";
+import { motion } from "framer-motion";
 import { packages, currency, type Package } from "../data/packages";
 import CtaButton from "./CtaButton";
 import Reveal from "./Reveal";
@@ -6,13 +7,12 @@ import Reveal from "./Reveal";
 function PackageCard({ pkg }: { pkg: Package }) {
   return (
     <div
-      className={`relative flex flex-col h-full rounded-3xl bg-white transition-all duration-300 ${
+      className={`relative flex flex-col h-full rounded-3xl bg-white text-ink transition-all duration-300 ${
         pkg.featured
-          ? "border-2 border-cta shadow-cardHover lg:scale-[1.04] z-10"
-          : "border border-slate-200 shadow-card hover:-translate-y-1 hover:shadow-cardHover"
+          ? "ring-2 ring-cta shadow-[0_30px_80px_-20px_rgba(245,131,31,0.55)] lg:scale-[1.05] z-10"
+          : "ring-1 ring-white/10 shadow-card hover:-translate-y-1.5"
       }`}
     >
-      {/* Badge ribbon */}
       <div
         className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wide text-white whitespace-nowrap ${
           pkg.featured ? "bg-cta" : "bg-brand"
@@ -23,58 +23,54 @@ function PackageCard({ pkg }: { pkg: Package }) {
 
       <div className="p-7 pt-9 flex flex-col h-full">
         <div className="text-center">
-          <h3 className="text-xl font-bold text-navy">{pkg.title}</h3>
+          <h3 className="text-lg font-semibold text-ink/70">{pkg.title}</h3>
           <div className="mt-4 h-40 flex items-center justify-center">
             <img
               src={pkg.image}
               alt={`${pkg.title} of Advanced Amino Formula`}
-              className="max-h-40 w-auto object-contain drop-shadow-lg"
+              className="max-h-40 w-auto object-contain"
             />
           </div>
         </div>
 
         <div className="mt-5 text-center">
           <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-extrabold text-navy">
+            <span className="font-display text-5xl text-ink leading-none">
               {currency(pkg.pricePerBottle)}
             </span>
-            <span className="text-slate-500 font-medium mb-1">/ bottle</span>
+            <span className="text-ink/50 font-medium mb-1">/ bottle</span>
           </div>
         </div>
 
-        {/* Perks */}
-        <ul className="mt-5 space-y-2.5 text-sm">
+        <ul className="mt-6 space-y-2.5 text-sm">
           {pkg.instantSavings !== null && (
             <li className="flex items-center gap-2.5">
               <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-cta/15 text-cta shrink-0">
                 <Check size={13} strokeWidth={3} />
               </span>
-              <span className="text-navy font-semibold">
+              <span className="text-ink font-semibold">
                 Instant Savings: {currency(pkg.instantSavings)}
               </span>
             </li>
           )}
-          {pkg.freeShipping && (
-            <li className="flex items-center gap-2.5">
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success/15 text-success shrink-0">
-                <Truck size={12} strokeWidth={2.5} />
-              </span>
-              <span className="text-slate-600">Free Shipping Included</span>
-            </li>
-          )}
+          <li className="flex items-center gap-2.5">
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success/15 text-success shrink-0">
+              <Truck size={12} strokeWidth={2.5} />
+            </span>
+            <span className="text-ink/60">Free Shipping Included</span>
+          </li>
           <li className="flex items-center gap-2.5">
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success/15 text-success shrink-0">
               <Check size={13} strokeWidth={3} />
             </span>
-            <span className="text-slate-600">60-Day Money-Back Guarantee</span>
+            <span className="text-ink/60">60-Day Money-Back Guarantee</span>
           </li>
         </ul>
 
-        {/* Total + CTA pinned to bottom */}
-        <div className="mt-6 pt-5 border-t border-slate-100 mt-auto">
+        <div className="mt-6 pt-5 border-t border-ink/10 mt-auto">
           <div className="flex items-baseline justify-between mb-4">
-            <span className="text-slate-500 font-medium">Total</span>
-            <span className="text-2xl font-extrabold text-navy">
+            <span className="text-ink/50 font-medium">Total</span>
+            <span className="font-display text-3xl text-ink">
               {currency(pkg.total)}
             </span>
           </div>
@@ -82,10 +78,10 @@ function PackageCard({ pkg }: { pkg: Package }) {
             href={pkg.checkoutUrl}
             external
             fullWidth
-            variant={pkg.featured ? "cta" : "solid"}
+            variant="cta"
             className="text-base"
           >
-            <Lock size={17} /> Checkout
+            Checkout
           </CtaButton>
         </div>
       </div>
@@ -95,19 +91,17 @@ function PackageCard({ pkg }: { pkg: Package }) {
 
 export default function OrderSection() {
   return (
-    <section
-      id="order"
-      className="py-16 md:py-24 bg-gradient-to-b from-navy to-navy-light text-white scroll-mt-16"
-    >
+    <section id="order" className="py-24 md:py-32 scroll-mt-24">
       <div className="container-wide">
-        <Reveal className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-cta font-semibold tracking-wider uppercase text-sm">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-cyanx font-medium tracking-[0.2em] uppercase text-xs">
             Choose Your Package
           </p>
-          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold">
-            Start rebuilding your strength today
+          <h2 className="mt-4 font-display text-4xl md:text-5xl text-white">
+            Start rebuilding your{" "}
+            <span className="italic text-gradient">strength today</span>
           </h2>
-          <p className="mt-4 text-white/75">
+          <p className="mt-5 text-white/60">
             The more you stock up, the more you save. Every order ships free and
             is backed by our 60-day money-back guarantee.
           </p>
@@ -121,10 +115,15 @@ export default function OrderSection() {
           ))}
         </div>
 
-        {/* reassurance row */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-white/75 text-sm">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-white/60 text-sm"
+        >
           <span className="flex items-center gap-2">
-            <Lock size={16} className="text-cyanx" /> Secure SSL Checkout
+            <ShieldDot /> Secure SSL Checkout
           </span>
           <span className="flex items-center gap-2">
             <Truck size={16} className="text-success" /> Free Shipping
@@ -132,8 +131,12 @@ export default function OrderSection() {
           <span className="flex items-center gap-2">
             <Check size={16} className="text-success" /> 60-Day Guarantee
           </span>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
+}
+
+function ShieldDot() {
+  return <span className="h-2.5 w-2.5 rounded-full bg-cyanx" />;
 }

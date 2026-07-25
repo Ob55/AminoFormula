@@ -1,3 +1,4 @@
+import AuroraBackground from "./components/AuroraBackground";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductShowcase from "./components/ProductShowcase";
@@ -13,7 +14,8 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#f7f9fb]">
+    <div className="relative min-h-screen text-white">
+      <AuroraBackground />
       <Navbar />
       <main>
         <Hero />

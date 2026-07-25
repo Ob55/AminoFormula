@@ -1,99 +1,101 @@
-import { Dumbbell, DollarSign, Truck, Star, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import { Star, ShieldCheck, ArrowUpRight } from "lucide-react";
 import CtaButton from "./CtaButton";
-
-const features = [
-  {
-    icon: Dumbbell,
-    title: "Rebuild lean muscle",
-    text: "8 essential amino acids in the exact ratio your body can actually use.",
-  },
-  {
-    icon: DollarSign,
-    title: "99% absorbed",
-    text: "Almost zero waste — far more usable than whey protein or BCAAs.",
-  },
-  {
-    icon: Truck,
-    title: "Free fast shipping",
-    text: "Free shipping on every order, delivered right to your door.",
-  },
-];
+import BlurText from "./BlurText";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-gradient-to-b from-navy to-navy-light text-white"
+      className="relative min-h-screen flex items-center pt-32 pb-20 md:pt-36"
     >
-      {/* subtle glow */}
-      <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-cyanx/20 blur-3xl" />
-      <div className="container-wide relative grid lg:grid-cols-2 gap-10 lg:gap-8 items-center py-14 md:py-20">
+      <div className="container-wide grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         {/* Left */}
-        <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-1.5 mb-6">
-            <span className="flex text-cta">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
-              ))}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 glass-pill rounded-full pl-2 pr-4 py-1.5 mb-7"
+          >
+            <span className="flex items-center gap-1 rounded-full bg-cta/90 text-white text-xs font-semibold px-2.5 py-1">
+              <Star size={12} fill="currentColor" strokeWidth={0} /> 4.8
             </span>
-            <span className="text-sm text-white/90 font-medium">
-              4.8 Average Rating • 2,300+ Reviews
+            <span className="text-sm text-white/75">
+              Loved by 2,300+ active adults
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] font-extrabold tracking-tight">
-            Rebuild Muscle &amp; <br className="hidden md:block" />
-            <span className="text-cyanx">Reclaim Your Strength</span>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-[5.2rem] leading-[0.95] tracking-tight text-white">
+            <BlurText text="Rebuild muscle." />
+            <br />
+            <span className="italic text-gradient">
+              <BlurText text="Reclaim your strength." delay={0.35} />
+            </span>
           </h1>
 
-          <p className="mt-5 text-lg text-white/80 max-w-xl">
-            Advanced Amino Formula delivers a perfect blend of the 8 essential
-            amino acids — designed to be efficiently used by your body, producing
-            very little waste. Fight age-related muscle loss and feel strong
-            again.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.7, delay: 0.9 }}
+            className="mt-7 text-lg text-white/65 max-w-xl leading-relaxed"
+          >
+            A perfect blend of the 8 essential amino acids — engineered to be
+            almost fully absorbed by your body, with very little waste. Fight
+            age-related muscle loss and feel strong again.
+          </motion.p>
 
-          <div className="mt-8 grid sm:grid-cols-3 gap-5">
-            {features.map((f) => (
-              <div key={f.title} className="flex flex-col gap-2">
-                <f.icon className="text-cyanx" size={26} />
-                <p className="font-semibold text-white">{f.title}</p>
-                <p className="text-sm text-white/70">{f.text}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <div>
-              <p className="text-sm text-white/60">Starts at just</p>
-              <p className="text-3xl font-extrabold">
-                $33.25
-                <span className="text-base font-medium text-white/70">
-                  {" "}
-                  / bottle
-                </span>
-              </p>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.1 }}
+            className="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-5"
+          >
             <CtaButton href="#order" className="text-lg px-9 py-4">
-              Order Now
+              Order Now <ArrowUpRight size={18} />
             </CtaButton>
-          </div>
+            <div className="flex items-center gap-3">
+              <span className="text-white/50 text-sm">from</span>
+              <span className="font-display text-3xl text-white">
+                $33.25
+                <span className="text-base text-white/50 font-sans"> / bottle</span>
+              </span>
+            </div>
+          </motion.div>
 
-          <div className="mt-6 flex items-center gap-2 text-white/70 text-sm">
-            <ShieldCheck size={18} className="text-success" />
-            60-Day Money-Back Guarantee — zero risk
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 1.3 }}
+            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-white/55 text-sm"
+          >
+            <span className="flex items-center gap-2">
+              <ShieldCheck size={16} className="text-success" /> 60-Day
+              money-back guarantee
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyanx" /> Free
+              shipping included
+            </span>
+          </motion.div>
         </div>
 
-        {/* Right */}
-        <div className="relative flex justify-center lg:justify-end animate-fade-up">
-          <div className="absolute inset-0 m-auto h-72 w-72 md:h-96 md:w-96 rounded-full bg-white/10 blur-2xl" />
-          <img
+        {/* Right — floating bottle on glowing pedestal */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="relative flex justify-center"
+        >
+          {/* rotating conic halo */}
+          <div className="absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full bg-[conic-gradient(from_0deg,rgba(34,201,240,0.35),transparent,rgba(27,143,214,0.35),transparent,rgba(34,201,240,0.35))] blur-2xl animate-spinslow" />
+          <div className="absolute inset-0 m-auto h-64 w-64 md:h-80 md:w-80 rounded-full pedestal blur-xl" />
+          <motion.img
             src="/assets/image-4.webp"
             alt="Advanced Amino Formula bottle"
-            className="relative w-64 md:w-80 lg:w-[26rem] drop-shadow-2xl"
+            className="relative w-60 md:w-80 drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-floaty"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

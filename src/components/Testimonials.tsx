@@ -21,42 +21,41 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-white">
+    <section id="reviews" className="py-24 md:py-28 scroll-mt-24">
       <div className="container-wide">
-        <Reveal className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-cta font-semibold tracking-wider uppercase text-sm">
+        <Reveal className="text-center max-w-2xl mx-auto mb-14">
+          <p className="text-cyanx font-medium tracking-[0.2em] uppercase text-xs">
             Real Results
           </p>
-          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-navy">
-            Trusted by thousands of active adults
+          <h2 className="mt-4 font-display text-4xl md:text-5xl text-white">
+            Trusted by thousands of{" "}
+            <span className="italic text-gradient">active adults</span>
           </h2>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-7">
+        <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
             <Reveal
               key={r.name}
               delay={i * 0.12}
-              className="relative rounded-3xl bg-slate-50 border border-slate-100 p-8 shadow-card"
+              className="relative glass rounded-3xl p-8"
             >
-              <Quote className="text-brand/20 absolute top-6 right-6" size={40} />
+              <Quote className="text-cyanx/25 absolute top-6 right-6" size={40} />
               <div className="flex text-cta mb-4">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={18} fill="currentColor" strokeWidth={0} />
+                {Array.from({ length: 5 }).map((_, s) => (
+                  <Star key={s} size={18} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
-              <p className="text-slate-700 leading-relaxed relative z-10">
+              <p className="text-white/75 leading-relaxed relative z-10">
                 “{r.text}”
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="h-11 w-11 rounded-full bg-brand text-white flex items-center justify-center font-bold">
+                <div className="h-11 w-11 rounded-full bg-gradient-to-br from-cyanx to-brand text-white flex items-center justify-center font-bold">
                   {r.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-semibold text-navy">{r.name}</p>
-                  <p className="text-sm text-success font-medium">
-                    {r.location}
-                  </p>
+                  <p className="font-semibold text-white">{r.name}</p>
+                  <p className="text-sm text-success">{r.location}</p>
                 </div>
               </div>
             </Reveal>

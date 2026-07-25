@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import CtaButton from "./CtaButton";
 
 const links = [
@@ -14,33 +14,34 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur supports-[backdrop-filter]:bg-navy/85 shadow-lg">
-      <nav className="container-wide flex items-center justify-between h-16 md:h-[74px]">
+    <header className="fixed top-4 inset-x-0 z-50">
+      <nav className="container-wide flex items-center justify-between gap-4">
         {/* Logo only */}
-        <a href="#top" className="flex items-center shrink-0">
+        <a href="#top" className="flex items-center shrink-0 glass-pill rounded-full px-4 py-2">
           <img
             src="/assets/Logo-White.png"
             alt="Advanced Bionutritionals"
-            className="h-9 md:h-11 w-auto"
+            className="h-7 md:h-8 w-auto"
           />
         </a>
 
-        {/* Nav details grouped on the right */}
-        <div className="hidden md:flex items-center gap-9">
-          <ul className="flex items-center gap-8">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <CtaButton href="#order" className="px-6 py-2.5 text-sm">
-            Order Now
+        {/* Center glass pill with links */}
+        <div className="hidden lg:flex items-center gap-1 glass-pill rounded-full px-2 py-2">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="rounded-full px-4 py-2 text-sm text-white/75 hover:text-white hover:bg-white/10 transition-colors"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Right CTA */}
+        <div className="hidden md:block">
+          <CtaButton href="#order" variant="light" className="px-5 py-2.5 text-sm">
+            Order Now <ArrowUpRight size={16} />
           </CtaButton>
         </div>
 
@@ -48,38 +49,36 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="md:hidden text-white p-2"
+          className="md:hidden glass-pill rounded-full p-2.5 text-white"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={26} /> : <Menu size={26} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy-dark border-t border-white/10">
-          <ul className="container-wide py-4 flex flex-col gap-1">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-3 text-white/85 hover:text-white font-medium"
-                >
-                  {l.label}
-                </a>
+        <div className="md:hidden container-wide mt-3">
+          <div className="glass rounded-3xl p-4">
+            <ul className="flex flex-col gap-1">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-xl px-4 py-3 text-white/85 hover:text-white hover:bg-white/10 font-medium"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+              <li className="pt-2">
+                <CtaButton href="#order" fullWidth onClick={() => setOpen(false)}>
+                  Order Now
+                </CtaButton>
               </li>
-            ))}
-            <li className="pt-2">
-              <CtaButton
-                href="#order"
-                fullWidth
-                onClick={() => setOpen(false)}
-              >
-                Order Now
-              </CtaButton>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </div>
       )}
     </header>
