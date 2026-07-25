@@ -9,7 +9,6 @@ import About from "./components/About";
 import Reviews from "./components/Reviews";
 import OrderSection from "./components/OrderSection";
 import Guarantee from "./components/Guarantee";
-import TrustBadges from "./components/TrustBadges";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
@@ -28,7 +27,6 @@ export default function App() {
         <Reviews />
         <OrderSection />
         <Guarantee />
-        <TrustBadges />
         <FAQ />
       </main>
       <Footer />

@@ -30,7 +30,10 @@ const linkGroups = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-navy-dark text-white/70 mt-10">
+    <footer
+      className="relative text-white/70 mt-10"
+      style={{ backgroundColor: "#0a2340" }}
+    >
       <div className="container-wide py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -69,6 +72,27 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Trust badges */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="text-center text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white/40 mb-6">
+            Safe, secure &amp; trusted checkout
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {["Norton-logo.png", "BBB-logo.png", "cc-logos.gif"].map((img) => (
+              <div
+                key={img}
+                className="flex items-center justify-center rounded-2xl bg-white px-6 py-3 shadow-lg"
+              >
+                <img
+                  src={`/assets/${img}`}
+                  alt="Trust badge"
+                  className="h-8 md:h-10 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-xs leading-relaxed space-y-3 text-white/45">
