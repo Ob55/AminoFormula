@@ -102,12 +102,12 @@ export default function Hero() {
           className="relative flex justify-center"
         >
           <div className="absolute -inset-6 m-auto h-[22rem] w-[22rem] md:h-[30rem] md:w-[30rem] rounded-full bg-gradient-to-br from-cyanx/25 to-brand/20 blur-3xl" />
-          <div className="relative w-full max-w-md">
+          <div className="relative w-full max-w-xl">
             <ImageSlider
               interval={7000}
               contain
+              thumbnails
               bgClass="bg-white"
-              className="ring-1 ring-navy/[0.06]"
               images={[
                 { src: "/assets/image-4.webp", alt: "Advanced Amino Formula bottle" },
                 { src: "/assets/ingredients-label.jpg", alt: "Advanced Amino Formula supplement facts label" },
@@ -118,7 +118,7 @@ export default function Hero() {
             <img
               src="/assets/Guarantee.png"
               alt="90-Day Money-Back Guarantee"
-              className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 w-24 md:w-32 drop-shadow-xl z-20"
+              className="absolute -bottom-5 -right-5 md:-bottom-6 md:-right-6 w-24 md:w-28 drop-shadow-xl z-20"
             />
           </div>
         </motion.div>
