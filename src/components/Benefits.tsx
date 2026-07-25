@@ -1,4 +1,5 @@
 import { Dumbbell, HeartPulse, Zap } from "lucide-react";
+import Reveal from "./Reveal";
 
 const benefits = [
   {
@@ -22,7 +23,7 @@ export default function Benefits() {
   return (
     <section id="benefits" className="py-16 md:py-24 bg-white">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto">
+        <Reveal className="text-center max-w-2xl mx-auto">
           <p className="text-cta font-semibold tracking-wider uppercase text-sm">
             Why Advanced Amino
           </p>
@@ -33,12 +34,13 @@ export default function Benefits() {
             After age 40, your body loses muscle faster than it can rebuild it.
             Advanced Amino Formula gives it exactly what it needs to fight back.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid md:grid-cols-3 gap-7">
-          {benefits.map((b) => (
-            <div
+          {benefits.map((b, i) => (
+            <Reveal
               key={b.title}
+              delay={i * 0.12}
               className="group rounded-3xl bg-slate-50 border border-slate-100 p-8 shadow-card hover:shadow-cardHover hover:-translate-y-1 transition-all duration-300"
             >
               <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-brand/10 text-brand group-hover:bg-brand group-hover:text-white transition-colors">
@@ -46,7 +48,7 @@ export default function Benefits() {
               </div>
               <h3 className="mt-5 text-xl font-bold text-navy">{b.title}</h3>
               <p className="mt-3 text-slate-600 leading-relaxed">{b.text}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

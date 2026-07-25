@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import Reveal from "./Reveal";
 
 const reviews = [
   {
@@ -22,19 +23,20 @@ export default function Testimonials() {
   return (
     <section id="reviews" className="py-16 md:py-24 bg-white">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-cta font-semibold tracking-wider uppercase text-sm">
             Real Results
           </p>
           <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-navy">
             Trusted by thousands of active adults
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-7">
-          {reviews.map((r) => (
-            <div
+          {reviews.map((r, i) => (
+            <Reveal
               key={r.name}
+              delay={i * 0.12}
               className="relative rounded-3xl bg-slate-50 border border-slate-100 p-8 shadow-card"
             >
               <Quote className="text-brand/20 absolute top-6 right-6" size={40} />
@@ -57,7 +59,7 @@ export default function Testimonials() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

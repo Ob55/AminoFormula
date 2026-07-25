@@ -14,36 +14,31 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur supports-[backdrop-filter]:bg-navy/90 shadow-lg">
-      <nav className="container-wide flex items-center justify-between h-16 md:h-[72px]">
-        {/* Logo */}
-        <a href="#top" className="flex items-center gap-2 shrink-0">
+    <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur supports-[backdrop-filter]:bg-navy/85 shadow-lg">
+      <nav className="container-wide flex items-center justify-between h-16 md:h-[74px]">
+        {/* Logo only */}
+        <a href="#top" className="flex items-center shrink-0">
           <img
             src="/assets/Logo-White.png"
             alt="Advanced Bionutritionals"
-            className="h-8 md:h-9 w-auto"
+            className="h-9 md:h-11 w-auto"
           />
-          <span className="text-white font-semibold text-lg hidden sm:inline">
-            Advanced <span className="text-cyanx">Amino</span>
-          </span>
         </a>
 
-        {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-white/80 hover:text-white text-sm font-medium transition-colors"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+        {/* Nav details grouped on the right */}
+        <div className="hidden md:flex items-center gap-9">
+          <ul className="flex items-center gap-8">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
           <CtaButton href="#order" className="px-6 py-2.5 text-sm">
             Order Now
           </CtaButton>

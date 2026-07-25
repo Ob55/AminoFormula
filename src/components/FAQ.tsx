@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Reveal from "./Reveal";
 
 const faqs = [
   {
@@ -58,17 +59,19 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-16 md:py-24 bg-slate-50 scroll-mt-16">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-cta font-semibold tracking-wider uppercase text-sm">
             Questions
           </p>
           <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-navy">
             Frequently asked questions
           </h2>
-        </div>
+        </Reveal>
         <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((f) => (
-            <Item key={f.q} {...f} />
+          {faqs.map((f, i) => (
+            <Reveal key={f.q} delay={i * 0.06}>
+              <Item {...f} />
+            </Reveal>
           ))}
         </div>
       </div>

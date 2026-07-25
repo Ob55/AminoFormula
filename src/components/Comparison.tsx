@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import Reveal from "./Reveal";
 
 const rows = [
   { label: "All 8 essential amino acids", amino: true, whey: false, bcaa: false },
@@ -28,7 +29,7 @@ export default function Comparison() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-navy">
             Why it beats whey protein &amp; BCAAs
           </h2>
@@ -36,9 +37,9 @@ export default function Comparison() {
             Most protein powders are only partially used by your body. Advanced
             Amino Formula is built for maximum absorption.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="max-w-4xl mx-auto overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card">
+        <Reveal className="max-w-4xl mx-auto overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card">
           <div className="grid grid-cols-4 bg-navy text-white text-sm md:text-base font-semibold">
             <div className="p-4 md:p-5" />
             <div className="p-4 md:p-5 text-center bg-brand">Advanced Amino</div>
@@ -66,7 +67,7 @@ export default function Comparison() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

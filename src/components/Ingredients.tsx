@@ -1,4 +1,5 @@
 import { Leaf, FlaskConical, Wheat, Milk, Sprout, ShieldCheck } from "lucide-react";
+import Reveal from "./Reveal";
 
 const freeFrom = [
   { icon: Milk, label: "Dairy Free" },
@@ -12,7 +13,7 @@ export default function Ingredients() {
   return (
     <section id="ingredients" className="py-16 md:py-24 bg-slate-50">
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-cta font-semibold tracking-wider uppercase text-sm">
             The Science
           </p>
@@ -23,20 +24,20 @@ export default function Ingredients() {
             Formulated in the exact ratio your body can efficiently use —
             producing very little waste, unlike ordinary protein supplements.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Amino acids diagram */}
-          <div className="rounded-3xl overflow-hidden shadow-card bg-white border border-slate-100">
+          <Reveal className="rounded-3xl overflow-hidden shadow-card bg-white border border-slate-100">
             <img
               src="/assets/image-5.webp"
               alt="The 8 essential amino acids in Advanced Amino Formula"
               className="w-full h-auto"
             />
-          </div>
+          </Reveal>
 
           {/* Supplement facts + free-from */}
-          <div>
+          <Reveal delay={0.15}>
             <div className="flex flex-col sm:flex-row gap-6 items-center">
               <img
                 src="/assets/image-1.webp"
@@ -74,7 +75,7 @@ export default function Ingredients() {
                 </span>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

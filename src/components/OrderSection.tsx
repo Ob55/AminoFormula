@@ -1,11 +1,12 @@
 import { Check, Truck, Lock } from "lucide-react";
 import { packages, currency, type Package } from "../data/packages";
 import CtaButton from "./CtaButton";
+import Reveal from "./Reveal";
 
 function PackageCard({ pkg }: { pkg: Package }) {
   return (
     <div
-      className={`relative flex flex-col rounded-3xl bg-white transition-all duration-300 ${
+      className={`relative flex flex-col h-full rounded-3xl bg-white transition-all duration-300 ${
         pkg.featured
           ? "border-2 border-cta shadow-cardHover lg:scale-[1.04] z-10"
           : "border border-slate-200 shadow-card hover:-translate-y-1 hover:shadow-cardHover"
@@ -99,7 +100,7 @@ export default function OrderSection() {
       className="py-16 md:py-24 bg-gradient-to-b from-navy to-navy-light text-white scroll-mt-16"
     >
       <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-cta font-semibold tracking-wider uppercase text-sm">
             Choose Your Package
           </p>
@@ -110,11 +111,13 @@ export default function OrderSection() {
             The more you stock up, the more you save. Every order ships free and
             is backed by our 60-day money-back guarantee.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch pt-4">
-          {packages.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} />
+          {packages.map((pkg, i) => (
+            <Reveal key={pkg.id} delay={i * 0.12} className="h-full">
+              <PackageCard pkg={pkg} />
+            </Reveal>
           ))}
         </div>
 

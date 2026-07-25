@@ -1,10 +1,11 @@
 import CtaButton from "./CtaButton";
+import Reveal from "./Reveal";
 
 export default function Guarantee() {
   return (
     <section id="guarantee" className="py-16 md:py-24 bg-white scroll-mt-16">
       <div className="container-wide">
-        <div className="max-w-5xl mx-auto rounded-3xl bg-slate-50 border border-slate-100 shadow-card p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <Reveal className="max-w-5xl mx-auto rounded-3xl bg-slate-50 border border-slate-100 shadow-card p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <img
             src="/assets/Guarantee.png"
             alt="60-Day Money-Back Guarantee"
@@ -26,7 +27,7 @@ export default function Guarantee() {
               </CtaButton>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

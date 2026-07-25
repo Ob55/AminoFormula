@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ProductShowcase from "./components/ProductShowcase";
 import Benefits from "./components/Benefits";
 import Comparison from "./components/Comparison";
 import Testimonials from "./components/Testimonials";
@@ -16,6 +17,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <ProductShowcase />
         <Benefits />
         <Comparison />
         <Testimonials />
