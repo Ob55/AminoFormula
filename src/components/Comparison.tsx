@@ -25,18 +25,6 @@ export default function Comparison() {
           />
         </Reveal>
 
-        {/* 99% absorbed infographic */}
-        <Reveal
-          delay={0.1}
-          className="mt-8 max-w-5xl mx-auto rounded-3xl overflow-hidden border border-navy/[0.07] shadow-[0_24px_60px_-30px_rgba(13,47,82,0.35)]"
-        >
-          <img
-            src="/assets/5.jpg"
-            alt="99% of the amino acids in Advanced Amino Formula are used by your body — only 1% wasted"
-            className="w-full h-auto"
-          />
-        </Reveal>
-
         {/* Whey + BCAA cards */}
         <div className="mt-8 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {[

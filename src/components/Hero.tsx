@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, ShieldCheck, ArrowUpRight } from "lucide-react";
 import CtaButton from "./CtaButton";
+import ImageSlider from "./ImageSlider";
 import { reviewStats } from "../data/content";
 
 export default function Hero() {
@@ -93,7 +94,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — bottle spotlight card with guarantee badge */}
+        {/* Right — auto-crossfade image slideshow with guarantee badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -101,17 +102,23 @@ export default function Hero() {
           className="relative flex justify-center"
         >
           <div className="absolute -inset-6 m-auto h-[22rem] w-[22rem] md:h-[30rem] md:w-[30rem] rounded-full bg-gradient-to-br from-cyanx/25 to-brand/20 blur-3xl" />
-          <div className="relative rounded-[2.5rem] bg-white p-8 md:p-10 shadow-[0_40px_90px_-30px_rgba(13,47,82,0.35)] ring-1 ring-navy/[0.06]">
-            <div className="pointer-events-none absolute inset-6 rounded-full border border-brand/10 animate-spinslow" />
-            <motion.img
-              src="/assets/image-4.webp"
-              alt="Advanced Amino Formula bottle"
-              className="relative w-52 md:w-72 animate-floaty"
+          <div className="relative w-full max-w-md">
+            <ImageSlider
+              interval={7000}
+              contain
+              bgClass="bg-white"
+              className="ring-1 ring-navy/[0.06]"
+              images={[
+                { src: "/assets/image-4.webp", alt: "Advanced Amino Formula bottle" },
+                { src: "/assets/ingredients-label.jpg", alt: "Advanced Amino Formula supplement facts label" },
+                { src: "/assets/2.jpg", alt: "“I feel 20 years younger” — Judy P., verified customer" },
+                { src: "/assets/5.jpg", alt: "99% of the amino acids are used by your body — only 1% wasted" },
+              ]}
             />
             <img
               src="/assets/Guarantee.png"
               alt="90-Day Money-Back Guarantee"
-              className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 w-24 md:w-32 drop-shadow-xl"
+              className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 w-24 md:w-32 drop-shadow-xl z-20"
             />
           </div>
         </motion.div>

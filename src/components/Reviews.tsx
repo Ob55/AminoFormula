@@ -1,7 +1,6 @@
 import { Star, BadgeCheck, ThumbsUp } from "lucide-react";
 import { reviews, reviewStats } from "../data/content";
 import Reveal from "./Reveal";
-import ImageSlider from "./ImageSlider";
 
 export default function Reviews() {
   return (
@@ -17,45 +16,28 @@ export default function Reviews() {
           </h2>
         </Reveal>
 
-        {/* Featured testimonial image + stats */}
-        <div className="grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-14">
-          <Reveal>
-            <ImageSlider
-              images={[
-                {
-                  src: "/assets/2.jpg",
-                  alt: "“I have not stopped taking them and feel 20 years younger” — Judy P., Advanced Amino Formula customer",
-                },
-                {
-                  src: "/assets/5.jpg",
-                  alt: "99% of the amino acids in Advanced Amino Formula are used by your body — only 1% wasted",
-                },
-              ]}
-            />
-          </Reveal>
-
-          <Reveal delay={0.1} className="grid grid-cols-3 divide-x divide-navy/10 rounded-3xl bg-white border border-navy/[0.07] shadow-[0_18px_50px_-30px_rgba(13,47,82,0.4)] py-8">
-            <div className="text-center px-2">
-              <p className="font-display text-4xl md:text-5xl text-navy">
-                {reviewStats.count.toLocaleString()}
-              </p>
-              <p className="text-sm text-navy/55 font-medium">Reviews</p>
-            </div>
-            <div className="text-center px-2">
-              <p className="font-display text-4xl md:text-5xl text-navy flex items-center justify-center gap-1">
-                {reviewStats.average}
-                <Star size={22} className="text-cta" fill="currentColor" strokeWidth={0} />
-              </p>
-              <p className="text-sm text-navy/55 font-medium">Avg Rating</p>
-            </div>
-            <div className="text-center px-2">
-              <p className="font-display text-4xl md:text-5xl text-navy">
-                {reviewStats.recommend}%
-              </p>
-              <p className="text-sm text-navy/55 font-medium">Recommend</p>
-            </div>
-          </Reveal>
-        </div>
+        {/* Stats bar */}
+        <Reveal className="max-w-3xl mx-auto mb-14 grid grid-cols-3 divide-x divide-navy/10 rounded-3xl bg-white border border-navy/[0.07] shadow-[0_18px_50px_-30px_rgba(13,47,82,0.4)] py-8">
+          <div className="text-center px-2">
+            <p className="font-display text-4xl md:text-5xl text-navy">
+              {reviewStats.count.toLocaleString()}
+            </p>
+            <p className="text-sm text-navy/55 font-medium">Reviews</p>
+          </div>
+          <div className="text-center px-2">
+            <p className="font-display text-4xl md:text-5xl text-navy flex items-center justify-center gap-1">
+              {reviewStats.average}
+              <Star size={22} className="text-cta" fill="currentColor" strokeWidth={0} />
+            </p>
+            <p className="text-sm text-navy/55 font-medium">Avg Rating</p>
+          </div>
+          <div className="text-center px-2">
+            <p className="font-display text-4xl md:text-5xl text-navy">
+              {reviewStats.recommend}%
+            </p>
+            <p className="text-sm text-navy/55 font-medium">Recommend</p>
+          </div>
+        </Reveal>
 
         {/* Review cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
