@@ -8,8 +8,8 @@ html {
 
 body {
   margin: 0;
-  background: #070912;
-  color: #eef2ff;
+  background: #ffffff;
+  color: #33415c;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,7 +17,7 @@ body {
 }
 
 ::selection {
-  background: rgba(34, 201, 240, 0.3);
+  background: rgba(27, 143, 214, 0.18);
 }
 
 /* Wide container — fills the screen, only slim gutters allowed */
@@ -43,64 +43,47 @@ body {
 }
 
 @layer components {
-  /* Display heading helper */
   .font-display {
     font-family: "Instrument Serif", ui-serif, Georgia, serif;
     font-weight: 400;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
-  /* Cyan → blue gradient text */
+  /* Blue → cyan gradient text for accent words */
   .text-gradient {
-    background: linear-gradient(120deg, #eaf6ff 0%, #22c9f0 45%, #1b8fd6 100%);
+    background: linear-gradient(115deg, #155f9a 0%, #1b8fd6 45%, #22c9f0 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Dark liquid glass (panels, cards) */
+  /* Light frosted card */
   .glass {
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(13, 47, 82, 0.08);
     border-radius: 1.5rem;
-    overflow: hidden;
-  }
-  .glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      160deg,
-      rgba(255, 255, 255, 0.35),
-      rgba(255, 255, 255, 0.04) 30%,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(34, 201, 240, 0.25)
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+    box-shadow: 0 18px 40px -24px rgba(13, 47, 82, 0.25);
   }
 
-  /* Glass pill (nav / badges) */
+  /* Light pill (nav / badges) */
   .glass-pill {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(13, 47, 82, 0.1);
+    box-shadow: 0 8px 24px -16px rgba(13, 47, 82, 0.3);
   }
 
-  /* Bright product pedestal — lets white-bg product photos glow on dark */
+  /* Soft blue glow behind product images */
   .pedestal {
     background: radial-gradient(
       circle at 50% 45%,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(224, 244, 255, 0.85) 42%,
-      rgba(224, 244, 255, 0) 70%
+      rgba(34, 201, 240, 0.22) 0%,
+      rgba(27, 143, 214, 0.12) 40%,
+      rgba(255, 255, 255, 0) 70%
     );
   }
 }

@@ -16,22 +16,25 @@ export default function Navbar() {
   return (
     <header className="fixed top-4 inset-x-0 z-50">
       <nav className="container-wide flex items-center justify-between gap-4">
-        {/* Logo only */}
-        <a href="#top" className="flex items-center shrink-0 glass-pill rounded-full px-4 py-2">
+        {/* Logo in a navy chip (logo art is white) */}
+        <a
+          href="#top"
+          className="flex items-center shrink-0 rounded-full bg-navy px-4 py-2.5 shadow-lg"
+        >
           <img
             src="/assets/Logo-White.png"
             alt="Advanced Bionutritionals"
-            className="h-7 md:h-8 w-auto"
+            className="h-6 md:h-7 w-auto"
           />
         </a>
 
-        {/* Center glass pill with links */}
+        {/* Center pill with links */}
         <div className="hidden lg:flex items-center gap-1 glass-pill rounded-full px-2 py-2">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-4 py-2 text-sm text-white/75 hover:text-white hover:bg-white/10 transition-colors"
+              className="rounded-full px-4 py-2 text-sm font-medium text-navy/70 hover:text-navy hover:bg-navy/5 transition-colors"
             >
               {l.label}
             </a>
@@ -40,7 +43,7 @@ export default function Navbar() {
 
         {/* Right CTA */}
         <div className="hidden md:block">
-          <CtaButton href="#order" variant="light" className="px-5 py-2.5 text-sm">
+          <CtaButton href="#order" variant="cta" className="px-5 py-2.5 text-sm">
             Order Now <ArrowUpRight size={16} />
           </CtaButton>
         </div>
@@ -49,7 +52,7 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="md:hidden glass-pill rounded-full p-2.5 text-white"
+          className="md:hidden glass-pill rounded-full p-2.5 text-navy"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -66,7 +69,7 @@ export default function Navbar() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-white/85 hover:text-white hover:bg-white/10 font-medium"
+                    className="block rounded-xl px-4 py-3 font-medium text-navy/80 hover:text-navy hover:bg-navy/5"
                   >
                     {l.label}
                   </a>

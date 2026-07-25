@@ -45,10 +45,10 @@ function BadgeItem({
         align === "left" ? "lg:flex-row-reverse lg:text-right" : ""
       }`}
     >
-      <span className="grid place-items-center h-16 w-16 shrink-0 rounded-full border-2 border-dashed border-cyanx/50 text-cyanx glass-pill">
+      <span className="grid place-items-center h-16 w-16 shrink-0 rounded-full border-2 border-dashed border-brand/40 text-brand bg-white shadow-sm">
         <Icon size={26} strokeWidth={1.75} />
       </span>
-      <span className="font-semibold uppercase leading-tight text-white tracking-tight text-lg">
+      <span className="font-bold uppercase leading-tight text-navy tracking-tight text-lg">
         {badge.label}
       </span>
     </motion.div>
@@ -57,13 +57,13 @@ function BadgeItem({
 
 export default function ProductShowcase() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-white to-sky-50/70">
       <div className="container-wide">
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-cyanx font-medium tracking-[0.2em] uppercase text-xs">
+          <p className="text-brand font-semibold tracking-[0.2em] uppercase text-xs">
             One Formula, Total Support
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-white">
+          <h2 className="mt-4 font-display text-4xl md:text-5xl text-navy">
             Pure, clean &amp; made for your{" "}
             <span className="italic text-gradient">whole body</span>
           </h2>
@@ -77,12 +77,12 @@ export default function ProductShowcase() {
           </div>
 
           <div className="relative order-1 lg:order-2 flex justify-center">
-            <div className="absolute inset-0 m-auto h-72 w-72 md:h-96 md:w-96 rounded-full pedestal blur-md" />
-            <div className="pointer-events-none absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full border border-white/10 animate-spinslow" />
+            <div className="absolute inset-0 m-auto h-72 w-72 md:h-96 md:w-96 rounded-full pedestal blur-lg" />
+            <div className="pointer-events-none absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full border border-brand/10 animate-spinslow" />
             <motion.img
               src="/assets/image-4.webp"
               alt="Advanced Amino Formula bottle"
-              className="relative w-52 md:w-72 animate-floaty"
+              className="relative w-52 md:w-72 drop-shadow-[0_25px_40px_rgba(13,47,82,0.15)] animate-floaty"
             />
           </div>
 
@@ -93,14 +93,17 @@ export default function ProductShowcase() {
           </div>
         </div>
 
-        <Reveal className="mt-20 max-w-3xl mx-auto glass rounded-3xl p-8 md:p-10" delay={0.1}>
+        <Reveal
+          className="mt-20 max-w-3xl mx-auto glass rounded-3xl p-8 md:p-10"
+          delay={0.1}
+        >
           <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
             {benefits.map((b) => (
               <li key={b} className="flex items-start gap-3">
-                <span className="mt-0.5 grid place-items-center h-6 w-6 shrink-0 rounded-full bg-cta/20 text-cta">
+                <span className="mt-0.5 grid place-items-center h-6 w-6 shrink-0 rounded-full bg-cta/15 text-cta">
                   <Check size={14} strokeWidth={3} />
                 </span>
-                <span className="text-white/80 font-medium">{b}</span>
+                <span className="text-navy/80 font-medium">{b}</span>
               </li>
             ))}
           </ul>

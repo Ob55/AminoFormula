@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen text-white">
+    <div className="relative min-h-screen text-navy-soft">
       <AuroraBackground />
       <Navbar />
       <main>

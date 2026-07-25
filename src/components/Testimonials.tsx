@@ -21,13 +21,13 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="py-24 md:py-28 scroll-mt-24">
+    <section id="reviews" className="py-24 md:py-28 scroll-mt-24 bg-white">
       <div className="container-wide">
         <Reveal className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-cyanx font-medium tracking-[0.2em] uppercase text-xs">
+          <p className="text-brand font-semibold tracking-[0.2em] uppercase text-xs">
             Real Results
           </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-white">
+          <h2 className="mt-4 font-display text-4xl md:text-5xl text-navy">
             Trusted by thousands of{" "}
             <span className="italic text-gradient">active adults</span>
           </h2>
@@ -38,24 +38,24 @@ export default function Testimonials() {
             <Reveal
               key={r.name}
               delay={i * 0.12}
-              className="relative glass rounded-3xl p-8"
+              className="relative rounded-3xl bg-white border border-navy/[0.07] p-8 shadow-[0_18px_50px_-30px_rgba(13,47,82,0.4)]"
             >
-              <Quote className="text-cyanx/25 absolute top-6 right-6" size={40} />
+              <Quote className="text-brand/15 absolute top-6 right-6" size={40} />
               <div className="flex text-cta mb-4">
                 {Array.from({ length: 5 }).map((_, s) => (
                   <Star key={s} size={18} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
-              <p className="text-white/75 leading-relaxed relative z-10">
+              <p className="text-navy/75 leading-relaxed relative z-10">
                 “{r.text}”
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="h-11 w-11 rounded-full bg-gradient-to-br from-cyanx to-brand text-white flex items-center justify-center font-bold">
+                <div className="h-11 w-11 rounded-full bg-gradient-to-br from-brand to-cyanx text-white flex items-center justify-center font-bold">
                   {r.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-semibold text-white">{r.name}</p>
-                  <p className="text-sm text-success">{r.location}</p>
+                  <p className="font-semibold text-navy">{r.name}</p>
+                  <p className="text-sm text-success font-medium">{r.location}</p>
                 </div>
               </div>
             </Reveal>

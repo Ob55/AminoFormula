@@ -30,7 +30,7 @@ const linkGroups = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 mt-10">
+    <footer className="relative bg-navy-dark text-white/70 mt-10">
       <div className="container-wide py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>

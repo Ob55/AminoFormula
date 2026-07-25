@@ -5,9 +5,15 @@ export default {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#070912", // page background (near-black navy)
+          DEFAULT: "#070912",
           soft: "#0c1020",
           card: "#0f1424",
+        },
+        navy: {
+          DEFAULT: "#0d2f52", // primary heading / dark text
+          soft: "#33415c", // body text
+          light: "#123c66",
+          dark: "#0a2340",
         },
         brand: {
           DEFAULT: "#1b8fd6",

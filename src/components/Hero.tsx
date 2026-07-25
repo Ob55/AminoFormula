@@ -7,9 +7,9 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center pt-32 pb-20 md:pt-36"
+      className="relative flex items-center pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-sky-50/80 via-white to-white"
     >
-      <div className="container-wide grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+      <div className="container-wide grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
         {/* Left */}
         <div>
           <motion.div
@@ -18,15 +18,15 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 glass-pill rounded-full pl-2 pr-4 py-1.5 mb-7"
           >
-            <span className="flex items-center gap-1 rounded-full bg-cta/90 text-white text-xs font-semibold px-2.5 py-1">
+            <span className="flex items-center gap-1 rounded-full bg-cta text-white text-xs font-bold px-2.5 py-1">
               <Star size={12} fill="currentColor" strokeWidth={0} /> 4.8
             </span>
-            <span className="text-sm text-white/75">
+            <span className="text-sm font-medium text-navy/70">
               Loved by 2,300+ active adults
             </span>
           </motion.div>
 
-          <h1 className="font-display text-5xl md:text-6xl lg:text-[5.2rem] leading-[0.95] tracking-tight text-white">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-[5.4rem] leading-[0.95] tracking-tight text-navy">
             <BlurText text="Rebuild muscle." />
             <br />
             <span className="italic text-gradient">
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.7, delay: 0.9 }}
-            className="mt-7 text-lg text-white/65 max-w-xl leading-relaxed"
+            className="mt-7 text-lg text-navy/60 max-w-xl leading-relaxed"
           >
             A perfect blend of the 8 essential amino acids — engineered to be
             almost fully absorbed by your body, with very little waste. Fight
@@ -55,10 +55,10 @@ export default function Hero() {
               Order Now <ArrowUpRight size={18} />
             </CtaButton>
             <div className="flex items-center gap-3">
-              <span className="text-white/50 text-sm">from</span>
-              <span className="font-display text-3xl text-white">
+              <span className="text-navy/45 text-sm">from</span>
+              <span className="font-display text-3xl text-navy">
                 $33.25
-                <span className="text-base text-white/50 font-sans"> / bottle</span>
+                <span className="text-base text-navy/45 font-sans"> / bottle</span>
               </span>
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 1.3 }}
-            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-white/55 text-sm"
+            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-navy/55 text-sm"
           >
             <span className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-success" /> 60-Day
@@ -80,20 +80,19 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — floating bottle on glowing pedestal */}
+        {/* Right — bottle on soft glow */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative flex justify-center"
         >
-          {/* rotating conic halo */}
-          <div className="absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full bg-[conic-gradient(from_0deg,rgba(34,201,240,0.35),transparent,rgba(27,143,214,0.35),transparent,rgba(34,201,240,0.35))] blur-2xl animate-spinslow" />
-          <div className="absolute inset-0 m-auto h-64 w-64 md:h-80 md:w-80 rounded-full pedestal blur-xl" />
+          <div className="absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full pedestal blur-xl" />
+          <div className="pointer-events-none absolute inset-0 m-auto h-72 w-72 md:h-[24rem] md:w-[24rem] rounded-full border border-brand/10 animate-spinslow" />
           <motion.img
             src="/assets/image-4.webp"
             alt="Advanced Amino Formula bottle"
-            className="relative w-60 md:w-80 drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] animate-floaty"
+            className="relative w-60 md:w-80 drop-shadow-[0_30px_50px_rgba(13,47,82,0.18)] animate-floaty"
           />
         </motion.div>
       </div>
