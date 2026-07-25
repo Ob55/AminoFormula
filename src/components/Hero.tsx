@@ -80,20 +80,23 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — bottle on soft glow */}
+        {/* Right — bottle spotlight card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative flex justify-center"
         >
-          <div className="absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full pedestal blur-xl" />
-          <div className="pointer-events-none absolute inset-0 m-auto h-72 w-72 md:h-[24rem] md:w-[24rem] rounded-full border border-brand/10 animate-spinslow" />
-          <motion.img
-            src="/assets/image-4.webp"
-            alt="Advanced Amino Formula bottle"
-            className="relative w-60 md:w-80 drop-shadow-[0_30px_50px_rgba(13,47,82,0.18)] animate-floaty"
-          />
+          {/* soft color glows behind the card */}
+          <div className="absolute -inset-6 m-auto h-[22rem] w-[22rem] md:h-[30rem] md:w-[30rem] rounded-full bg-gradient-to-br from-cyanx/25 to-brand/20 blur-3xl" />
+          <div className="relative rounded-[2.5rem] bg-white p-8 md:p-10 shadow-[0_40px_90px_-30px_rgba(13,47,82,0.35)] ring-1 ring-navy/[0.06]">
+            <div className="pointer-events-none absolute inset-6 rounded-full border border-brand/10 animate-spinslow" />
+            <motion.img
+              src="/assets/image-4.webp"
+              alt="Advanced Amino Formula bottle"
+              className="relative w-52 md:w-72 animate-floaty"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

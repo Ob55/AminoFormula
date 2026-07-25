@@ -77,13 +77,16 @@ export default function ProductShowcase() {
           </div>
 
           <div className="relative order-1 lg:order-2 flex justify-center">
-            <div className="absolute inset-0 m-auto h-72 w-72 md:h-96 md:w-96 rounded-full pedestal blur-lg" />
-            <div className="pointer-events-none absolute inset-0 m-auto h-80 w-80 md:h-[26rem] md:w-[26rem] rounded-full border border-brand/10 animate-spinslow" />
-            <motion.img
-              src="/assets/image-4.webp"
-              alt="Advanced Amino Formula bottle"
-              className="relative w-52 md:w-72 drop-shadow-[0_25px_40px_rgba(13,47,82,0.15)] animate-floaty"
-            />
+            <div className="absolute inset-0 m-auto h-72 w-72 md:h-96 md:w-96 rounded-full bg-gradient-to-br from-cyanx/20 to-brand/15 blur-3xl" />
+            {/* white spotlight disc so the product blends cleanly */}
+            <div className="relative grid place-items-center h-64 w-64 md:h-80 md:w-80 rounded-full bg-white shadow-[0_40px_90px_-30px_rgba(13,47,82,0.3)] ring-1 ring-navy/[0.05]">
+              <div className="pointer-events-none absolute inset-4 rounded-full border border-brand/10 animate-spinslow" />
+              <motion.img
+                src="/assets/image-4.webp"
+                alt="Advanced Amino Formula bottle"
+                className="relative w-44 md:w-60 animate-floaty"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-8 order-3 items-center lg:items-start">
